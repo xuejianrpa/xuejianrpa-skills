@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信公众号文章搜索"
+  short_description: "按关键词搜索微信公众号文章标题摘要发布时间和来源链接"
+  default_prompt: "Use $xuejian-wechat-article-search to search WeChat public account articles for a keyword."

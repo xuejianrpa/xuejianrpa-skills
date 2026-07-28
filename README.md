@@ -1,5 +1,7 @@
 # xuejianrpa-skills
 
+[中文](README_CN.md) | English
+
 Public Codex skills maintained by xuejianrpa.
 
 ## Included

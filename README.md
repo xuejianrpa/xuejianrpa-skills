@@ -18,3 +18,13 @@ xuejianrpa 维护的公开 Codex skills。
 - AI 编程平台：https://aigocode.com/invite/JHK8VZAQ
 - 飞书文档：https://my.feishu.cn/wiki/XkNawOgzjiK4zektG6dcD4zXnxd
 - 更多项目：https://github.com/xuejianrpa/ai-image-gen
+
+## 联系我
+
+<p align="center">
+  <img src="assets/wechat.jpg" width="220" alt="雪见微信二维码" />
+</p>
+
+<p align="center">
+  <b>加微信</b>
+</p>

@@ -18,3 +18,13 @@ See the skill folder for usage.
 - AI Coding Platform: https://aigocode.com/invite/JHK8VZAQ
 - Feishu Docs: https://my.feishu.cn/wiki/XkNawOgzjiK4zektG6dcD4zXnxd
 - More: https://github.com/xuejianrpa/ai-image-gen
+
+## Connect
+
+<p align="center">
+  <img src="assets/wechat.jpg" width="220" alt="Xuejian WeChat QR code" />
+</p>
+
+<p align="center">
+  <b>Add WeChat</b>
+</p>

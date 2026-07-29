@@ -7,6 +7,7 @@ Public Codex skills maintained by xuejianrpa.
 ## Included
 
 - `skills/xuejian-wechat-article-search`
+- `skills/xuejian-wechat-video-resolver`
 
 See the skill folder for usage.
 

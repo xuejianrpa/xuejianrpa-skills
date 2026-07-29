@@ -7,6 +7,7 @@ xuejianrpa 维护的公开 Codex skills。
 ## 包含
 
 - `skills/xuejian-wechat-article-search`
+- `skills/xuejian-wechat-video-resolver`
 
 查看对应 skill 文件夹获取用法。
 

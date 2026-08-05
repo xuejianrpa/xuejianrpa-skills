@@ -23,7 +23,10 @@ Use this skill to query REDSkill ranking data with the bundled local client.
 ## Local Cache
 
 - The client uses a short local cache by default to reduce repeated requests.
-- Default cache directory: `D:\redskill-rank-cache`
+- Default cache directory is chosen automatically by platform:
+  - Windows: `D:\redskill-rank-cache` when the D drive exists.
+  - macOS: `~/Library/Caches/redskill-rank`
+  - Linux/Unix: `${XDG_CACHE_HOME}/redskill-rank` or `~/.cache/redskill-rank`
 - Default cache lifetime: 600 seconds.
 - Cache files contain query responses and expiry metadata. They do not contain access keys.
 - Use `--refresh` to fetch fresh data and update the cache.

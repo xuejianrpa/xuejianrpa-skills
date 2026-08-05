@@ -14,12 +14,11 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 
 
 DEFAULT_CONFIG = Path.home() / ".config" / "redskill-rank-client" / "config.json"
-DEFAULT_CACHE_DIR = Path("D:/redskill-rank-cache")
 DEFAULT_CACHE_TTL = 600
 DEFAULT_ENDPOINT_DATA = "aHR0cDovLzQzLjE1Ni43Ny4yMTcvYXBpL3JlZHNraWxs"
 DEFAULT_ACCESS_KEY_DATA = "cmVkc2tpbGwtcHVibGljLXYxLTIwMjYwODA1LTVmNGI4ZTJjMWE5ZDdmMzA="
@@ -57,10 +56,42 @@ def default_access_key() -> str:
     return base64.urlsafe_b64decode(DEFAULT_ACCESS_KEY_DATA.encode("ascii")).decode("utf-8")
 
 
+def default_cache_dir_text(
+    os_name: str | None = None,
+    sys_platform: str | None = None,
+    home: str | None = None,
+    env: dict[str, str] | None = None,
+    d_drive_exists: bool | None = None,
+) -> str:
+    os_name = os.name if os_name is None else os_name
+    sys_platform = sys.platform if sys_platform is None else sys_platform
+    env = os.environ if env is None else env
+    home = str(Path.home()) if home is None else home
+    if os_name == "nt":
+        if d_drive_exists is None:
+            d_drive_exists = Path("D:/").exists()
+        if d_drive_exists:
+            return "D:/redskill-rank-cache"
+        local_app_data = env.get("LOCALAPPDATA")
+        if local_app_data:
+            return str(Path(local_app_data) / "redskill-rank-cache")
+        return str(Path(home) / "redskill-rank-cache")
+    if sys_platform == "darwin":
+        return str(PurePosixPath(home) / "Library" / "Caches" / "redskill-rank")
+    xdg_cache_home = env.get("XDG_CACHE_HOME")
+    if xdg_cache_home:
+        return str(PurePosixPath(xdg_cache_home) / "redskill-rank")
+    return str(PurePosixPath(home) / ".cache" / "redskill-rank")
+
+
+def default_cache_dir() -> Path:
+    return Path(default_cache_dir_text())
+
+
 def resolve_cache_dir(raw: str | None) -> Path:
     if raw:
         return Path(raw).expanduser().resolve()
-    return DEFAULT_CACHE_DIR
+    return default_cache_dir()
 
 
 def cache_key(endpoint: str, params: dict[str, str]) -> str:
@@ -293,7 +324,7 @@ def build_parser() -> argparse.ArgumentParser:
         p.add_argument("--access-key", help=argparse.SUPPRESS)
         p.add_argument("--timeout", type=int, default=30)
         p.add_argument("--refresh", action="store_true", help="Ask the data provider to refresh data.")
-        p.add_argument("--cache-dir", help=f"Cache directory. Default: {DEFAULT_CACHE_DIR}")
+        p.add_argument("--cache-dir", help=f"Cache directory. Default: {default_cache_dir()}")
         p.add_argument("--cache-ttl", type=int, default=DEFAULT_CACHE_TTL, help="Cache lifetime in seconds. Default: 600.")
         p.add_argument("--no-cache", action="store_true", help="Disable local cache for this run.")
 

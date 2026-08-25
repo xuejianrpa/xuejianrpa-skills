@@ -84,6 +84,14 @@ description: "启动/停止/检查本地 DeepSeek Harness Web 服务（项目位
 ## 备注
 
 - 项目根目录有用户自己的 `run-dsh-web.bat`（内容 = `pnpm dsh web` 重定向到
-  `server.log`），适合用户双击常驻；agent 托管时直接用上面的命令即可。
+  `server.log`）。**agent 后台任务托管的实例实测会随会话生命周期死亡**
+  （启动正常，之后进程以 exit code -1 终止，已复现多次）——需要常驻时，
+  用脱离会话的方式启动 bat：
+
+  ```bash
+  powershell -NoProfile -Command "Start-Process -FilePath 'cmd.exe' -ArgumentList '/c','run-dsh-web.bat' -WorkingDirectory 'D:\githubProjects\deepseek-harness' -WindowStyle Minimized"
+  ```
+
+  启动后日志在 `D:\githubProjects\deepseek-harness\server.log`。
 - `~/.dsh` 是该应用的用户数据目录（配置/凭据/会话/存储），**不要改动**。
 - 拉取更新后如需生效新代码，按「版本升级流程」走（先停后升再启）。

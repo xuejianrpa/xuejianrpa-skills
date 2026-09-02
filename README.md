@@ -86,6 +86,7 @@ BRAVE_PROXY      可选，Brave 网络不通时使用代理
 - 微信：`soraaigc`
 - 知识星球：https://t.zsxq.com/mC8bP
 - AI 编程平台：https://aigocode.com/invite/JHK8VZAQ
+- AI 模型 API：https://www.hiapi.ai/invite/Ff70 — 一个 API，所有 AI 模型；生产级 API，支持图像/视频/音频生成
 - 飞书文档：https://my.feishu.cn/wiki/XkNawOgzjiK4zektG6dcD4zXnxd
 - 更多项目：https://github.com/xuejianrpa/ai-image-gen
 

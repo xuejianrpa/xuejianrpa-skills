@@ -86,6 +86,7 @@ BRAVE_PROXY      Optional, used when Brave needs a proxy
 - WeChat: `soraaigc`
 - Knowledge Planet: https://t.zsxq.com/mC8bP
 - AI Coding Platform: https://aigocode.com/invite/JHK8VZAQ
+- AI Model API: https://www.hiapi.ai/invite/Ff70 — one API for all AI models; production-grade image, video, and audio generation APIs
 - Feishu Docs: https://my.feishu.cn/wiki/XkNawOgzjiK4zektG6dcD4zXnxd
 - More: https://github.com/xuejianrpa/ai-image-gen
 

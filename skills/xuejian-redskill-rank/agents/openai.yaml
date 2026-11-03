@@ -1,0 +1,4 @@
+interface:
+  display_name: "Xuejian REDSkill Rank"
+  short_description: "Query Xiaohongshu REDSkill rankings."
+  default_prompt: "Use $xuejian-redskill-rank to query Xiaohongshu REDSkill rankings and show the data I ask for."

@@ -1,0 +1,7 @@
+interface:
+  display_name: "视频号解析"
+  short_description: "解析微信视频号分享链接"
+  default_prompt: "Use $xuejian-wechat-video-resolver to resolve a WeChat Channels share link."
+
+policy:
+  allow_implicit_invocation: true

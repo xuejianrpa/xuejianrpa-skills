@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+.redskill-rank-cache/
+redskill-rank-cache/

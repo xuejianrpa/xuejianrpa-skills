@@ -38,6 +38,7 @@
 |---|---|---|
 | [`xuejian-web-search`](skills/xuejian-web-search) | 三源网页/新闻搜索：keenable + Tavily + Brave，自动去重、自动降级，适合行业资讯、项目调研和公开信息交叉验证 | `keenable`；可选 `TAVILY_API_KEY`、`BRAVE_API_KEY` |
 | [`xuejian-google-translate`](skills/xuejian-google-translate) | 免费 Google 翻译（网页版同款 gtx 端点，免 key）：翻译/词典释义/语言检测，长文自动分段，429 自动退避 | 无需任何 key；国内网络自动探测本地代理（http/mixed 口）并缓存 |
+| [`xuejian-uguu-upload`](skills/xuejian-uguu-upload) | uguu.se 临时文件床上传，一条命令把文件/文本变成公网直链：多文件逐个请求、文本不落盘、`--json`/`--urls-only` 输出，503 抖动自动退避重试 | 无需任何 key；单文件 ≤128MB，**8 小时过期**；链接公开可访问（URL 即唯一凭据），勿传敏感内容 |
 | [`xuejian-wechat-article-search`](skills/xuejian-wechat-article-search) | 搜索微信公众号文章列表，获取标题、摘要、发布时间和搜狗中间链接 | Node.js |
 | [`xuejian-wechat-video-resolver`](skills/xuejian-wechat-video-resolver) | 解析微信视频号分享链接，获取作者、简介、封面、互动数据和短期有效媒体地址 | 见 skill 说明 |
 | [`xuejian-redskill-rank`](skills/xuejian-redskill-rank) | 查询小红书 REDSkill 排行榜：热度、用户/使用量、7 日增长、作者榜、关键词搜索与导出 | 见 skill 说明 |
